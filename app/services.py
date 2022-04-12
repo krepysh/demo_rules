@@ -18,6 +18,12 @@ class SerializedRule(TypedDict):
 
 
 class RuleBuilder:
+    """
+    >>> RuleBuilder().build_rule({'match': \
+        {'attribute_name': 'price', 'condition': 'less', 'attribute_value': 50}, \
+    'action': {'absolute_discount': 10}}) #doctest: +ELLIPSIS
+    <app.domain.Rule object at 0x...
+    """
     def build_rule(self, jsoned_rule: SerializedRule) -> Rule:
         if not self.is_rule_valid(jsoned_rule):
             self.log_invalid_rule(jsoned_rule)

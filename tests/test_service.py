@@ -1,5 +1,6 @@
 import pytest
 
+import app.domain
 from app.services import RuleBuilder
 
 
@@ -21,3 +22,13 @@ def test_is_key_exist_in_dict(key: str, key_type: type, expected: bool) -> None:
         'key_none': None,
     }
     assert rule_builder.is_key_exist_in_dict(key, key_type, dict_to_check) == expected
+
+
+def test_builded_rule(product_with_price):
+    raw_rule = {
+        'match': {'attribute_name': 'price', 'condition': 'less', 'attribute_value': 50},
+        'action': {'absolute_discount': 10}
+    }
+    product = product_with_price(40)
+    rule = RuleBuilder().build_rule(raw_rule)
+    assert rule.apply(product) == 30
