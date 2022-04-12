@@ -1,6 +1,6 @@
 import pytest
 
-from services import RuleBuilder
+from app.services import RuleBuilder
 
 
 rule_builder = RuleBuilder()

@@ -1,4 +1,4 @@
-from domain import Rule, Action, Match
+from app.domain import Rule, Action, Match
 from typing import Any, Mapping, TypedDict
 
 
