@@ -1,8 +1,11 @@
 # What is this?
 It's assignment's solution.
 You have set of products. And you have some discount rules. You need to apply rules to each of products. By the time rules may change, so architecture must allow easily adding or changing rules.
-## How to run
+## Demo
+Checkout [demo](demo.py)
+## How to run linter and tests
 ```bash
+python -m pip install -r requirements/lint.txt
 make check
 ```
 ## Architecture

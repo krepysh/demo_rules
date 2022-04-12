@@ -4,9 +4,15 @@ style:
 test:
 	python -m pytest
 
+doctest:
+	python -m doctest app/services.py
+
 types:
 	mypy ./ --disallow-untyped-defs
 
+demo:
+	python demo.py
+
 check:
-	make -j2 style types
+	make -j4 style types test doctest demo
 
