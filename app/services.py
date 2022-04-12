@@ -1,8 +1,5 @@
 from domain import Rule, Action, Match
-from typing import Any, TYPE_CHECKING, Mapping
-
-if TYPE_CHECKING:
-    from typing import TypedDict
+from typing import Any, Mapping, TypedDict
 
 
 class SerializedMatch(TypedDict):
